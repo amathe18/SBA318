@@ -14,7 +14,7 @@ export default function App() {
 return(
   <div>
     <ExercisesAPI/>
-    
+    <p>weiuufnew</p>
   </div>
 )
 }

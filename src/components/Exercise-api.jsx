@@ -1,9 +1,14 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import ExerciseDisplay from "./ExerciseDisplay";
+
 
 const API_KEY = 'Sj6aIM7Hqi7yHL5HoxT4WQ==Mx2Z2Js9gPiWpprm'
 
-export default async function ExercisesAPI() {
+export default function ExercisesAPI() {
+  const [exercise, setExercise] = useState([])
+
+  const Workouts = async () => {
+
     const res = await fetch(
         `https://api.api-ninjas.com/v1/exercises`,
         {
@@ -13,14 +18,24 @@ export default async function ExercisesAPI() {
     
       const exercisesData = await res.json();
       console.log(exercisesData);
+      setExercise(exercisesData)
+      return exercisesData
+    }
 
+    useEffect(()=>{
+      Workouts()
+    },[])
       return(
         <div>
-            {exercisesData.exercise.map((exercise, index) => {
-            //<h1>{exercise.name}</h1>
-            <ExerciseDisplay exercise={exercise} key={exercise.index}/>
-})}
-            </div>
+        {exercise.length > 0? 
+        
+          <div>
+            {exercise.map((exerciseData, index) => {
+            return <ExerciseDisplay exercise={exerciseData} key={exercise.index}/>
+})} 
+            </div> : <div>Loading</div>
+        }
+               </div>
       )
 }
 
