@@ -3,7 +3,29 @@
   margin: 0 auto;
   padding: 2rem;
   text-align: center;
+  text-decoration-color: antiquewhite;
+  background-color: rgb(238, 41, 41);
+.navbar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #333;
+    color: #fff;
+    padding: 1rem;
+  }    
+
 }
+
+
+.navbar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #333;
+    color: #fff;
+    padding: 1rem;
+  }    
+
 
 .logo {
   height: 6em;

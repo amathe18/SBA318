@@ -15,11 +15,14 @@ import { useState } from "react";
     }
     return (
       <div>
-        <form onSubmit={handleSubmit}>
+        <button type ="submit"onSubmit={handleSubmit}>
+          getWorkout
+        </button>
+          
           
           <input type="text" name="searchterm" value={formData.searchterm} onChange={handleChange} />
           <input type="submit" value="submit" />
-        </form>
+        
       </div>
     );
   }
